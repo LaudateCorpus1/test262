@@ -1,0 +1,6 @@
+{
+"numTests":160,
+"testSuite":[
+"json/intl402.json"
+]
+}

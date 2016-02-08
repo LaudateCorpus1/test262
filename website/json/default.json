@@ -1,0 +1,9 @@
+{
+"numTests":15958,
+"testSuite":[
+"json/harness.json",
+"json/language.json",
+"json/annexB.json",
+"json/built-ins.json"
+]
+}
