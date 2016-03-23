@@ -1,5 +1,5 @@
 {
-"numTests":160,
+"numTests":175,
 "testSuite":[
 "json/intl402.json"
 ]
