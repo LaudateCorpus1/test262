@@ -2,8 +2,8 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
+esid: sec-object.entries
 description: Object.entries should have length 1
-es7id: pending
 author: Jordan Harband
 includes: [propertyHelper.js]
 ---*/

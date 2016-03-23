@@ -45,7 +45,7 @@ Test262 supports the following tags:
  - [**negative**](#negative)
  - [**es5id**](#es5id)
  - [**es6id**](#es6id)
- - [**id**](#id)
+ - [**esid**](#esid)
  - [**includes**](#includes)
  - [**timeout**](#timeout)
  - [**author**](#author)
@@ -90,10 +90,10 @@ When writing a new test for ES6, it is only necessary to include this tag when t
 
 This tag identifies the section number from the portion of the ECMAScript 6 standard that is tested by this test.
 
-#### id
-**id**: [spec-id]
+#### esid
+**esid**: [spec-id]
 
-This tag identifies the hash ID from the portion of the ECMAScript draft which is most recent to the date the test was added. It represents the anchors on the generated HTML version of the specs. E.g.: `id: sec-typedarray-length`. This tag might be used to replace a `es6id` or further.
+This tag identifies the hash ID from the portion of the ECMAScript draft which is most recent to the date the test was added. It represents the anchors on the generated HTML version of the specs. E.g.: `esid: sec-typedarray-length`. This tag might be used to replace a `es6id` or further.
 
 When writing a new test for a Stage 3+ spec not yet published on the draft, the `pending` value can be used while a hash ID is not available.
 
@@ -128,6 +128,8 @@ This tag is for boolean properties associated with the test.
 - **`raw`** - execute the test without any modification (no helpers will be
   available); necessary to test the behavior of directive prologue; implies
   `noStrict`
+- **`async`** - defer interpretation of test results until after the invocation
+  of the global $DONE` function
 
 #### features
 **features**: [list]
@@ -198,7 +200,7 @@ assert.throws(ReferenceError, function() {
 
 ## Writing Asynchronous Tests
 
-An asynchronous test is any test that includes the string `$DONE` anywhere in the test file.  The test runner checks for the presence of this string; if it is found, the runner expects that the `$DONE()` function will be called to signal test completion.
+An asynchronous test is any test that include the `async` frontmatter flag. When executing such tests, the runner expects that the global `$DONE()` function will be called to signal test completion.
 
  * If the argument to `$DONE` is omitted, is `undefined`, or is any other falsy value, the test is considered to have passed.
 

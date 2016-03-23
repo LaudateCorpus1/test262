@@ -2,8 +2,8 @@
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
+esid: sec-object.entries
 description: Object.entries accepts number primitives.
-es7id: pending
 author: Jordan Harband
 ---*/
 
